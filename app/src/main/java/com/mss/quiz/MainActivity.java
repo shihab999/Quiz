@@ -1,20 +1,37 @@
 package com.mss.quiz;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
     TextView AnsText1,AnsText2,AnsText3,AnsText4,AnsText5;
     Button btn1,btn2,btn3,btn4,btn5;
     RadioGroup question1,question2,question3,question4,question5;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    BottomNavigationView button;
+
 
     String Q1Ans="Bangladesh", UserAns1 ="";
     String Q2Ans="bd", UserAns2 ="";
@@ -47,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
         question4 = findViewById(R.id.question4);
         question5 = findViewById(R.id.question5);
 
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawerLayout = findViewById(R.id.drawer);
+        navigationView = findViewById(R.id.nav);
+
+        button = findViewById(R.id.button);
+
 
         question1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -68,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Questions Start..............
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,7 +249,100 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //.................Questions End
 
 
+        //DrawerLayout Start.............
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this,drawerLayout,toolbar,R.string.Open,R.string.Close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+        toggle.syncState();
+
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId()) {
+                    case R.id.home:
+                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.account:
+                        Toast.makeText(MainActivity.this, "Account", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.backup:
+                        Toast.makeText(MainActivity.this, "Backup", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.setting:
+                        Toast.makeText(MainActivity.this, "Setting", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
+
+        //.............. DrawerLayout End
+
+        // NavigationButton Start...........
+
+        button.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.home:
+                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.backup:
+                        Toast.makeText(MainActivity.this, "Backup", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.logout:
+                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return false;
+            }
+        });
+
+
+
+
+
+
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_menu,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.home:
+                Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.account:
+                Toast.makeText(MainActivity.this, "Account", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.backup:
+                Toast.makeText(MainActivity.this, "Backup", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.setting:
+                Toast.makeText(MainActivity.this, "Setting", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.logout:
+                Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

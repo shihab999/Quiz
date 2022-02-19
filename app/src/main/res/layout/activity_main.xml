@@ -1,390 +1,446 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#98C6DD"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="false"
+    tools:openDrawer="start"
+    android:id="@+id/drawer"
+    tools:context=".MainActivity"
+    >
 
-    <include
-        layout="@layout/toolbar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#98C6DD"
+            >
 
-// Question 1 Start..........
-            <RadioGroup
-                android:id="@+id/question1"
-                android:layout_margin="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Question 1"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="3dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">> What is your Country name?"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
-
-                <RadioButton
-                    android:id="@+id/Q1option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pakistan"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-                <RadioButton
-                    android:id="@+id/Q1option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bangladesh"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-                <RadioButton
-                    android:id="@+id/Q1option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="China"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-                <RadioButton
-                    android:id="@+id/Q1option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="India"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
-
-            </RadioGroup>
-
-            //.......Question 1 End
-
-            <TextView
-                android:id="@+id/AnsText1"
+            <ScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_marginTop="5dp"
-                android:id="@+id/btn1"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:textSize="22sp"/>
+                android:layout_marginBottom="65dp">
 
-            <RadioGroup
-                android:id="@+id/question2"
-                android:layout_margin="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Question 2"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="3dp"/>
+                    // Question 1 Start..........
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">> What is the Internet tld of Bangladesh?"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    <RadioGroup
+                        android:id="@+id/question1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
 
-                <RadioButton
-                    android:id="@+id/Q2option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="in"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Question 1"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/Q2option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="uk"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=">> What is your Country name?"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-                <RadioButton
-                    android:id="@+id/Q2option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="pk"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q1option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pakistan"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q2option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="bd"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q1option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bangladesh"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-            </RadioGroup>
-            <TextView
-                android:id="@+id/AnsText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_marginTop="5dp"
-                android:id="@+id/btn2"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:textSize="22sp"/>
+                        <RadioButton
+                            android:id="@+id/Q1option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="China"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-            <RadioGroup
-                android:id="@+id/question3"
-                android:layout_margin="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/Q1option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="India"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Question 3"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="3dp"/>
+                    </RadioGroup>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">> When Bangladesh got Independence?"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    //.......Question 1 End
 
-                <RadioButton
-                    android:id="@+id/Q3option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1971"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/AnsText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/Q3option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1970"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    <Button
+                        android:id="@+id/btn1"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Submit"
+                        android:textSize="22sp"
+                        android:background="#4BD351"/>
 
-                <RadioButton
-                    android:id="@+id/Q3option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1972"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    <RadioGroup
+                        android:id="@+id/question2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
 
-                <RadioButton
-                    android:id="@+id/Q3option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1973"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Question 2"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            />
 
-            </RadioGroup>
-            <TextView
-                android:id="@+id/AnsText3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_marginTop="5dp"
-                android:id="@+id/btn3"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:textSize="22sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=">> What is the Internet tld of Bangladesh?"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-            <RadioGroup
-                android:id="@+id/question4"
-                android:layout_margin="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/Q2option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="in"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Question 4"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="3dp"/>
+                        <RadioButton
+                            android:id="@+id/Q2option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="uk"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">> What is the currency of Bangladesh?"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                        <RadioButton
+                            android:id="@+id/Q2option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="pk"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q4option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rupee"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q2option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="bd"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q4option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dollar"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/Q4option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Taka"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/AnsText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                <RadioButton
-                    android:id="@+id/Q4option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Diner"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    <Button
+                        android:id="@+id/btn2"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Submit"
+                        android:textSize="22sp"
+                        android:background="#4BD351"/>
 
-            </RadioGroup>
-            <TextView
-                android:id="@+id/AnsText4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_marginTop="5dp"
-                android:id="@+id/btn4"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:textSize="22sp"/>
+                    <RadioGroup
+                        android:id="@+id/question3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
 
-            <RadioGroup
-                android:id="@+id/question5"
-                android:layout_margin="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Question 3"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Question 5"
-                    android:textColor="@color/black"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="3dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=">> When Bangladesh got Independence?"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=">> What is our National game?"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                        <RadioButton
+                            android:id="@+id/Q3option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1971"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q5option1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cricket"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q3option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1970"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q5option2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kabadi"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q3option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1972"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q5option3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hockey"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                        <RadioButton
+                            android:id="@+id/Q3option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1973"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/Q5option4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Football"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"/>
+                    </RadioGroup>
 
-            </RadioGroup>
-            <TextView
-                android:id="@+id/AnsText5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-            <Button
-                android:layout_marginTop="5dp"
-                android:id="@+id/btn5"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Submit"
-                android:textSize="22sp"/>
+                    <TextView
+                        android:id="@+id/AnsText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn3"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Submit"
+                        android:textSize="22sp"
+                        android:background="#4BD351"/>
+
+                    <RadioGroup
+                        android:id="@+id/question4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Question 4"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=">> What is the currency of Bangladesh?"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q4option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rupee"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q4option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dollar"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q4option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Taka"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q4option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diner"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/AnsText4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn4"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Submit"
+                        android:textSize="22sp"
+                        android:background="#4BD351"/>
+
+                    <RadioGroup
+                        android:id="@+id/question5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:text="Question 5"
+                            android:textColor="@color/black"
+                            android:textSize="28sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=">> What is our National game?"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q5option1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cricket"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q5option2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kabadi"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q5option3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hockey"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/Q5option4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Football"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/AnsText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text=""
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn5"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="Submit"
+                        android:textSize="22sp"
+                        android:background="#4BD351" />
+
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
-    </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/purple_200"
+            app:itemTextColor="@color/purple_500"
+            app:menu="@menu/bottom_menu" />
+
+   </RelativeLayout>
 
 
-</LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header_navigation"
+        app:menu="@menu/drawer_menu"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>
